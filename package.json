@@ -1,0 +1,23 @@
+{
+  "name": "chess-for-avion-19",
+  "version": "1.0.0",
+  "description": "Repository for chess project for Avion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FYTRivera/chess-for-avion-19.git"
+  },
+  "keywords": [],
+  "authors": "Franco Yñigo T. Rivera, Junmark D. Chi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FYTRivera/chess-for-avion-19/issues"
+  },
+  "homepage": "https://github.com/FYTRivera/chess-for-avion-19#readme",
+  "dependencies": {
+    "sass": "^1.52.2"
+  }
+}
