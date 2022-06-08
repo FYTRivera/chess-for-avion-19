@@ -11,37 +11,126 @@
 
     .intro-title{
         font-size: 12rem;
-        background: linear-gradient(rgb(201, 127, 30, 0.7), rgb(250, 136, 71, 0.7));
+        background: linear-gradient(rgba(247, 133, 62, 1),rgb(177, 96, 45));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin: 0;
+        margin: auto;
         position: absolute;
-        top: 300px;
+        top: 25%;
+        animation: up 1s ease-in-out infinite alternate;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1;
+
+        @keyframes up {
+            100%{ transform: translateY(-20px); }
+        }
+
+        @keyframes title-shadow {
+            0%{ box-shadow: 0 0 10px 1px rgba(184, 120, 37, 0.1);}
+            100%{ box-shadow: 0 0 20px 10px rgba(184, 120, 37, 0.3); }
+        }
+
+        &::after{
+            content: '';
+            border-radius: 100%;
+            width: 35rem;
+            animation: up 1s ease-in-out infinite alternate-reverse, title-shadow 1s infinite alternate-reverse;
+            position: absolute;
+            top: 250px;
+        }
     }
 
     .intro-button{
+        height: 7rem;
+        width: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 0;
         font-size: 2rem;
         border-radius: 10px;
-        padding: 3rem 3rem;
         outline: none;
         border: none;
         cursor: pointer;
         color: white;
         background: #f3894c;
-        box-shadow: 0px 10px #be6f41;
-        transition: 0.2s;
+        background-image: linear-gradient(rgba(247, 133, 62, 1),rgb(212, 104, 37));
+        box-shadow: 0px 10px rgb(180, 88, 30);
+        transition: 0.2s ease-in-out;
         font-family: 'Montserrat', sans-serif;
+        z-index: 1;
+        position: relative;
+        margin: auto;
 
-        &::after{
-            content: '';
-
+        &:hover:not(.expansion-1){
+            color: #f3d6ae;
+            background: rgb(247, 133, 62);
+            box-shadow: 0px 10px #e26e2a,
+                        0px 5px 10px 10px #dd9b40;
         }
 
-        &:hover{
-            background: #fd8645;
-            box-shadow: 0px 10px #e26e2a,
-                        0px 5px 10px 10px #db922c;
-            transform: scale(1.05);
+        .container{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            border: double 5px transparent;
+            border-radius: 1rem;
+            background-image: linear-gradient(rgba(247, 133, 62, 1),rgb(218, 119, 58)), linear-gradient(rgb(255, 190, 146),rgb(187, 136, 103));
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            height: 40rem;
+            width: 40rem;
+            display: none;
+            transition: all 1s;
+            opacity: 0;
+            animation: opacity 0.5s ease-in-out 1.5s normal forwards;
+
+            @keyframes opacity {
+                100%{
+                    transform: translateY(-15px);
+                    box-shadow: 
+                                0 12px 5px 3px rgba(0, 0, 0, 0.3),
+                          inset 0 15px 5px 0 rgba(0, 0, 0, 0.3);
+                }
+            }   
         }
     }
+}
+
+.expansion-1{
+    animation: padding 2s ease-in-out, border 0.5s ease-in-out 1s, shadow 0.5s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+    cursor: not-allowed;
+
+    @keyframes border {
+        0%{ border-radius: 0; }
+        100%{ border-radius: 2rem 30% 2rem 30%; }   
+    }
+
+    @keyframes shadow {
+        0%{ box-shadow: 0px 10px rgb(180, 88, 30); }
+        100%{ box-shadow: 
+                        0px 60px rgb(180, 88, 30),
+                        inset 0px -60px 40px 0 rgba(0, 0, 0, 0.05),
+                        inset 0px 60px 40px 0 rgba(250, 250, 250, 0.08);
+        }
+    }
+    
+    @keyframes padding {
+        33% { padding: 0 35rem 0rem 35rem; }
+        66% { padding: 60rem 35rem 0 35rem; }
+        100%{ padding: 60rem 35rem 0 35rem; }
+    }
+}
+
+.opacity{
+    opacity: 0;
+}
+
+.fa-chess-bishop{
+    font-size: 10rem;
+    text-shadow: 0px 10px #e28965;
 }
