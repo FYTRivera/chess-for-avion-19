@@ -1,2 +1,6 @@
-# chess-for-avion-19
-Repository for chess project for Avion
+# Chess-for-Avion-Batch19
+Repository for Chess Game Project
+
+GROUP 5 MEMBERS
+- Franco Yñigo T. Rivera
+- Junmark Chi
