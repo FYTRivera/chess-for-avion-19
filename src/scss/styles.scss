@@ -81,12 +81,14 @@
             background-image: linear-gradient(rgba(247, 133, 62, 1),rgb(218, 119, 58)), linear-gradient(rgb(255, 190, 146),rgb(187, 136, 103));
             background-origin: border-box;
             background-clip: content-box, border-box;
-            height: 40rem;
-            width: 40rem;
+            height: 45rem;
+            width: 45rem;
             display: none;
             transition: all 1s;
             opacity: 0;
             animation: opacity 0.5s ease-in-out 1.5s normal forwards;
+            flex-wrap: wrap;
+            overflow: hidden;
 
             @keyframes opacity {
                 100%{
@@ -95,8 +97,127 @@
                                 0 12px 5px 3px rgba(0, 0, 0, 0.3),
                           inset 0 15px 5px 0 rgba(0, 0, 0, 0.3);
                 }
-            }   
-        }
+            }
+
+            .cell{
+                width: 12.5%;
+                height: 12.5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.1));
+                animation: shade 0.5s ease-in-out 1.5s normal forwards;
+                opacity: 0;
+                transform: translate(-30px,-30px) skew(0,-20deg);
+                cursor: default;
+                // animation: name duration timing-function delay iteration-count direction fill-mode;
+
+                @for $i from 1 through 64 {
+                    &:nth-child(#{$i}){
+                        animation: test 0.2s ease-in-out #{(0.05*$i)+1.8}s 1 normal forwards;
+
+                        @keyframes test {
+                            0%{ 
+                                opacity: 0;
+                                transform: translate(-30px,-30px) skew(0,-20deg);
+                                box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+                            }
+                            100%{
+                                opacity: 1;
+                                transform: translate(0px,0px) skew(0deg, 0deg);
+                                box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+                                cursor: pointer;
+                            }
+                        }
+                    } 
+                }
+
+                @keyframes shade {
+                    100%{
+                        box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+                    }
+                }
+
+                &:hover{
+                    background-image: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.2));
+
+                }
+
+                &:nth-child(n + 1):nth-child(-n + 8):nth-child(even){
+                    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+
+                    &:hover{
+                        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
+        
+                    }
+                }
+
+                &:nth-child(n + 9):nth-child(-n + 16):nth-child(odd){
+                    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+
+                    &:hover{
+                        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
+        
+                    }
+                }
+
+                &:nth-child(n + 17):nth-child(-n + 24):nth-child(even){
+                    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+
+                    &:hover{
+                        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
+        
+                    }
+                }
+
+                &:nth-child(n + 25):nth-child(-n + 32):nth-child(odd){
+                    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+
+                    &:hover{
+                        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
+        
+                    }
+                }
+
+                &:nth-child(n + 33):nth-child(-n + 40):nth-child(even){
+                    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+
+                    &:hover{
+                        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
+        
+                    }
+                }
+
+                &:nth-child(n + 41):nth-child(-n + 48):nth-child(odd){
+                    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+
+                    &:hover{
+                        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
+        
+                    }
+                }
+
+                &:nth-child(n + 49):nth-child(-n + 56):nth-child(even){
+                    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+
+                    &:hover{
+                        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
+        
+                    }
+                }
+
+                &:nth-child(n + 57):nth-child(-n + 64):nth-child(odd){
+                    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+
+                    &:hover{
+                        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
+        
+                    }
+                }
+            }
+        }  
     }
 }
 
@@ -134,3 +255,4 @@
     font-size: 10rem;
     text-shadow: 0px 10px #e28965;
 }
+

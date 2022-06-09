@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap);
 *,
 *::before,
 *::after {
@@ -102,18 +102,1114 @@ body {
   background-image: linear-gradient(rgb(247, 133, 62), rgb(218, 119, 58)), linear-gradient(rgb(255, 190, 146), rgb(187, 136, 103));
   background-origin: border-box;
   background-clip: content-box, border-box;
-  height: 40rem;
-  width: 40rem;
+  height: 45rem;
+  width: 45rem;
   display: none;
   transition: all 1s;
   opacity: 0;
   animation: opacity 0.5s ease-in-out 1.5s normal forwards;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 @keyframes opacity {
   100% {
     transform: translateY(-15px);
     box-shadow: 0 12px 5px 3px rgba(0, 0, 0, 0.3), inset 0 15px 5px 0 rgba(0, 0, 0, 0.3);
   }
+}
+.introduction .intro-button .container .cell {
+  width: 12.5%;
+  height: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+  animation: shade 0.5s ease-in-out 1.5s normal forwards;
+  opacity: 0;
+  transform: translate(-30px, -30px) skew(0, -20deg);
+  cursor: default;
+}
+.introduction .intro-button .container .cell:nth-child(1) {
+  animation: test 0.2s ease-in-out 1.85s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(2) {
+  animation: test 0.2s ease-in-out 1.9s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(3) {
+  animation: test 0.2s ease-in-out 1.95s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(4) {
+  animation: test 0.2s ease-in-out 2s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(5) {
+  animation: test 0.2s ease-in-out 2.05s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(6) {
+  animation: test 0.2s ease-in-out 2.1s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(7) {
+  animation: test 0.2s ease-in-out 2.15s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(8) {
+  animation: test 0.2s ease-in-out 2.2s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(9) {
+  animation: test 0.2s ease-in-out 2.25s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(10) {
+  animation: test 0.2s ease-in-out 2.3s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(11) {
+  animation: test 0.2s ease-in-out 2.35s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(12) {
+  animation: test 0.2s ease-in-out 2.4s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(13) {
+  animation: test 0.2s ease-in-out 2.45s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(14) {
+  animation: test 0.2s ease-in-out 2.5s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(15) {
+  animation: test 0.2s ease-in-out 2.55s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(16) {
+  animation: test 0.2s ease-in-out 2.6s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(17) {
+  animation: test 0.2s ease-in-out 2.65s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(18) {
+  animation: test 0.2s ease-in-out 2.7s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(19) {
+  animation: test 0.2s ease-in-out 2.75s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(20) {
+  animation: test 0.2s ease-in-out 2.8s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(21) {
+  animation: test 0.2s ease-in-out 2.85s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(22) {
+  animation: test 0.2s ease-in-out 2.9s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(23) {
+  animation: test 0.2s ease-in-out 2.95s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(24) {
+  animation: test 0.2s ease-in-out 3s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(25) {
+  animation: test 0.2s ease-in-out 3.05s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(26) {
+  animation: test 0.2s ease-in-out 3.1s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(27) {
+  animation: test 0.2s ease-in-out 3.15s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(28) {
+  animation: test 0.2s ease-in-out 3.2s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(29) {
+  animation: test 0.2s ease-in-out 3.25s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(30) {
+  animation: test 0.2s ease-in-out 3.3s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(31) {
+  animation: test 0.2s ease-in-out 3.35s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(32) {
+  animation: test 0.2s ease-in-out 3.4s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(33) {
+  animation: test 0.2s ease-in-out 3.45s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(34) {
+  animation: test 0.2s ease-in-out 3.5s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(35) {
+  animation: test 0.2s ease-in-out 3.55s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(36) {
+  animation: test 0.2s ease-in-out 3.6s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(37) {
+  animation: test 0.2s ease-in-out 3.65s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(38) {
+  animation: test 0.2s ease-in-out 3.7s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(39) {
+  animation: test 0.2s ease-in-out 3.75s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(40) {
+  animation: test 0.2s ease-in-out 3.8s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(41) {
+  animation: test 0.2s ease-in-out 3.85s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(42) {
+  animation: test 0.2s ease-in-out 3.9s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(43) {
+  animation: test 0.2s ease-in-out 3.95s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(44) {
+  animation: test 0.2s ease-in-out 4s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(45) {
+  animation: test 0.2s ease-in-out 4.05s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(46) {
+  animation: test 0.2s ease-in-out 4.1s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(47) {
+  animation: test 0.2s ease-in-out 4.15s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(48) {
+  animation: test 0.2s ease-in-out 4.2s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(49) {
+  animation: test 0.2s ease-in-out 4.25s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(50) {
+  animation: test 0.2s ease-in-out 4.3s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(51) {
+  animation: test 0.2s ease-in-out 4.35s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(52) {
+  animation: test 0.2s ease-in-out 4.4s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(53) {
+  animation: test 0.2s ease-in-out 4.45s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(54) {
+  animation: test 0.2s ease-in-out 4.5s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(55) {
+  animation: test 0.2s ease-in-out 4.55s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(56) {
+  animation: test 0.2s ease-in-out 4.6s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(57) {
+  animation: test 0.2s ease-in-out 4.65s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(58) {
+  animation: test 0.2s ease-in-out 4.7s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(59) {
+  animation: test 0.2s ease-in-out 4.75s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(60) {
+  animation: test 0.2s ease-in-out 4.8s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(61) {
+  animation: test 0.2s ease-in-out 4.85s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(62) {
+  animation: test 0.2s ease-in-out 4.9s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(63) {
+  animation: test 0.2s ease-in-out 4.95s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+.introduction .intro-button .container .cell:nth-child(64) {
+  animation: test 0.2s ease-in-out 5s 1 normal forwards;
+}
+@keyframes test {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) skew(0, -20deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px) skew(0deg, 0deg);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+@keyframes shade {
+  100% {
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+.introduction .intro-button .container .cell:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.2));
+}
+.introduction .intro-button .container .cell:nth-child(n+1):nth-child(-n+8):nth-child(even) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+1):nth-child(-n+8):nth-child(even):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+9):nth-child(-n+16):nth-child(odd) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+9):nth-child(-n+16):nth-child(odd):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+17):nth-child(-n+24):nth-child(even) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+17):nth-child(-n+24):nth-child(even):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+25):nth-child(-n+32):nth-child(odd) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+25):nth-child(-n+32):nth-child(odd):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+33):nth-child(-n+40):nth-child(even) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+33):nth-child(-n+40):nth-child(even):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+41):nth-child(-n+48):nth-child(odd) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+41):nth-child(-n+48):nth-child(odd):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+49):nth-child(-n+56):nth-child(even) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+49):nth-child(-n+56):nth-child(even):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+}
+.introduction .intro-button .container .cell:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+.introduction .intro-button .container .cell:nth-child(n+57):nth-child(-n+64):nth-child(odd):hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
 }
 
 .expansion-1 {
