@@ -2,8 +2,25 @@ import { select, create } from './utils.js'
 
 class Chess {
     constructor(){
-
+		this.setDefault();
     }
+
+    setDefault() {
+		this.info = {
+			preview: false, // when previewing match history
+			started: false, // when the started
+			ended: false, // when the game is ended
+			won: null, // Winning player
+			turn: null, // Player turn
+			timer: 5, // Five minutes Timer
+		};
+
+		this.data = {
+			// players: [],
+			// matchHistory: [],
+			// board: null,
+		};
+	}
 
     renderIntroduction(){
         const APP = select('.app')
@@ -13,7 +30,7 @@ class Chess {
         const board = new Board()
         
         TITLE.innerHTML = `CHESS`
-        INTRO_BUTTON.innerHTML = `<p class="play">PLAY!</p>`
+        INTRO_BUTTON.innerHTML = `PLAY!`
         
         INTRO_DIV.classList.add('introduction')
         TITLE.classList.add('intro-title')
@@ -23,6 +40,19 @@ class Chess {
             INTRO_BUTTON.classList.add('expansion-1')
             INTRO_BUTTON.innerHTML = ''
             INTRO_BUTTON.style.cursor = 'default'
+            const cellSound = new Audio('../.././public/assets/cell.wav')
+            
+            setTimeout(() => {  
+                cellSound.load()
+                cellSound.loop = true
+                cellSound.playbackRate = 8.4
+                // cellSound.volume = 0
+                cellSound.play()
+
+                setTimeout(() => {
+                    cellSound.pause()
+                },2100)
+            },3000)
 
             setTimeout(()=>{
                 TITLE.style.display = 'none'
@@ -75,9 +105,24 @@ class Board {
         }, 1000)
 
         INTRO_BUTTON.append(CONTAINER)
+
+        this.renderArm(INTRO_BUTTON)
+    }
+
+    renderArm(INTRO_BUTTON){
+        const armJoint = create('div')
+        const shoulder = create('div')
+        armJoint.classList.add('arm')
+        shoulder.classList.add('shoulder')
+
+        setTimeout(()=> {
+            armJoint.style.display = 'flex'
+        },2000)
+
+        INTRO_BUTTON.append(armJoint)
+        armJoint.append(shoulder)
     }
 }
-
 
 const game = new Chess()
 
