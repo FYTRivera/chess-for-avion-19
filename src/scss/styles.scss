@@ -77,14 +77,14 @@
             top: 8rem;
             height: 5rem;
             width: 0rem;
-            background: linear-gradient(rgb(236, 117, 117),rgb(83, 37, 37));
+            background: linear-gradient(rgb(100, 100, 99),rgb(58, 56, 56));
             border-top-left-radius: 1rem;
             border-bottom-left-radius: 1rem;
-            animation: growArm 1s ease-in-out 4s 1 normal forwards;
-            display: none;
+            animation: growArm 0.5s ease-in-out 3s 1 normal forwards;
+            // display: none;
 
             @keyframes growArm{
-                50%{
+                60%{
                     top: 8rem;
                     left: -1rem;
                     height: 5rem;   
@@ -99,9 +99,256 @@
                 }
             }
 
-            .shoulder{
+            .arm-joint{
+                position: absolute;
+                margin: auto;
+                left: 0rem;
+                top: 0;
+                bottom: 0;
+                height: 7rem;
+                width: 0rem;
+                background: linear-gradient(rgb(83, 79, 79),rgb(29, 27, 27));
+                border-top-left-radius: 3rem;
+                border-bottom-left-radius: 3rem;
+                animation: growJoint 0.5s ease-in-out 3.5s 1 normal forwards;
+                z-index: 1;
+                
+                @keyframes growJoint{
+                    30%{
+                        left: 0rem;
+                        top: 0;
+                        bottom: 0;
+                        height: 5rem;
+                        width: 0rem;
+                    }
 
-            }
+                    100%{
+                        left: -4rem;
+                        top: 0;
+                        bottom: 0;
+                        height: 5rem;
+                        width: 4rem;
+                    }
+                }
+
+                .shoulder1{
+                    position: absolute;
+                    top: 35%;
+                    left: 30%;
+                    height: 0rem;
+                    width: 3rem;
+                    background: white;
+                    border-radius: 5rem;
+                    transform: rotate(30deg);
+                    background: linear-gradient(to right,rgb(94, 90, 90),rgb(29, 27, 27));
+                    transform-origin: top;
+                    animation: idle1 1s ease-in-out infinite alternate, height1 0.3s ease-in-out 4s 1 normal forwards;
+
+                    @keyframes height1 {
+                        0%{
+                            height: 0rem;
+                        }
+
+                        100%{
+                            height: 18rem;
+                        }
+                    }
+
+                    @keyframes idle1 {
+                        0%{
+                            transform: rotate(30deg);
+                        }
+
+                        100%{
+                            transform: rotate(35deg);
+                        }
+                    }
+
+                    .shoulder2{
+                        position: absolute;
+                        right: 50%;
+                        bottom: 0;
+                        height: 0rem;
+                        width: 3rem;
+                        background: white;
+                        border-radius: 5rem;
+                        transform: rotate(56deg);
+                        transform-origin: bottom;
+                        background: linear-gradient(to right,rgb(102, 98, 98),rgb(29, 27, 27));
+                        animation: idle2 1s ease-in-out infinite alternate,height2 0.3s ease-in-out 4.3s 1 normal forwards;
+
+
+                        @keyframes height2 {
+                            0%{
+                                height: 0rem;
+                            }
+    
+                            100%{
+                                height: 69rem;
+                            }
+                        }
+    
+                        @keyframes idle2 {
+                            0%{
+                                transform: rotate(56deg);
+                            }
+    
+                            100%{
+                                transform: rotate(53deg);
+                            }
+                        }
+
+                        .shoulder3{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            left: -50%;
+                            height: 0rem;
+                            width: 0rem;
+                            background: white;
+                            border-radius: 5rem;
+                            transform-origin: bottom;
+                            background: linear-gradient(to bottom,rgb(88, 85, 85),rgb(49, 45, 45));
+                            animation: height3 0.5s ease-in-out 4.6s 1 normal forwards,idle3 1s ease-in-out infinite alternate;
+                            
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            @keyframes idle3 {
+                                0%{
+                                    transform: rotate(-85deg);
+                                }
+                                100%{
+                                    transform: rotate(-89deg);
+                                }
+                            }
+
+                            @keyframes height3 {
+                                0%{
+                                    height: 0rem;
+                                    width: 0rem;
+                                    border-radius: 5rem;
+                                }
+        
+                                100%{ 
+                                    height: 20rem;
+                                    width: 40rem;
+                                    border-radius: 1rem;
+                                }
+                            }
+
+                            .screen{
+                                height: 90%;
+                                width: 90%;
+                                border-radius: 1rem;
+                                background-image: linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.3));
+                                overflow: hidden;
+                                box-shadow: inset 0px 10px 25px rgba(0, 0, 0, 0.4),
+                                            inset 0px -10px 25px rgba(250, 250, 250, 0.05);
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                flex-direction: column;
+                                font-family: 'Press Start 2P', cursive;
+                                gap: 1rem;
+
+                                &::before {
+                                    content: " ";
+                                    display: flex;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    background: linear-gradient(
+                                        to bottom,
+                                        rgba(18, 16, 16, 0) 50%,
+                                        rgba(0, 0, 0, 0.05) 50%
+                                    );
+                                    background-size: 100% 8px;
+                                    z-index: 2;
+                                    pointer-events: none;
+                                }
+
+                                .h1-name{
+                                    color: green;
+                                    font-size: 1.2rem;
+                                    margin-top: 3rem;
+                                }
+
+                                .input-name{
+                                    width: 60%;
+                                    max-width: auto;
+                                    background: transparent;
+                                    outline: none;
+                                    border: none;
+                                    color: green;
+                                    font-size: 2rem;
+                                    font-family: 'Press Start 2P', cursive;
+                                    text-align: center;
+                                    border-bottom: 1px solid green;
+                                }
+
+                                .p1-select{
+                                    font-size: 1rem;
+                                    color: green;
+                                    margin-top: 1rem;
+                                }
+
+                                .p1-WB{
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 1rem;
+                                }
+
+                                .p1-Wbutton{
+                                    height: 6rem;
+                                    width: 6rem;
+                                    border-radius: 1rem;
+                                    outline: none;
+                                    background: linear-gradient(rgb(219, 219, 219),rgb(85, 85, 85));
+                                    cursor: pointer;
+
+                                    .fa-chess-queen{
+                                        font-size: 3.5rem;
+                                    }
+
+                                    &:hover{
+                                        background: rgba(0, 128, 0, 0.4);
+                                    }
+
+                                    &:active{
+                                        background: rgba(0, 77, 0, 0.4);
+                                    }
+                                }
+
+                                .p1-Bbutton{
+                                    height: 6rem;
+                                    width: 6rem;
+                                    border-radius: 1rem;
+                                    background: linear-gradient(rgb(219, 219, 219),rgb(85, 85, 85));
+                                    outline: none;
+                                    cursor: pointer;
+
+                                    .fa-chess-queen{
+                                        font-size: 3.5rem;
+                                    }
+
+                                    &:hover{
+                                        background: rgba(0, 128, 0, 0.4);
+                                    }
+
+                                    &:active{
+                                        background: rgba(0, 77, 0, 0.4);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
         }
 
         .container{
@@ -147,9 +394,14 @@
                 cursor: default;
                 // animation: name duration timing-function delay iteration-count direction fill-mode;
 
+                .piece{
+                    height: 90%;
+                    width: auto;
+                }
+
                 @for $i from 1 through 64 {
                     &:nth-child(#{$i}){
-                        animation: test 0.5s ease-in-out #{(0.03*$i)+1.8}s 1 normal forwards;
+                        animation: test 0.3s ease-in-out #{(0.02*$i)+1.8}s 1 normal forwards;
 
                         @keyframes test {
                             0%{ 
