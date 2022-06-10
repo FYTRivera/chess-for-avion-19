@@ -1,5 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Blaka&family=Press+Start+2P&display=swap");
 *,
 *::before,
 *::after {
@@ -98,14 +99,13 @@ body {
   top: 8rem;
   height: 5rem;
   width: 0rem;
-  background: linear-gradient(rgb(236, 117, 117), rgb(83, 37, 37));
+  background: linear-gradient(rgb(100, 100, 99), rgb(58, 56, 56));
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  animation: growArm 1s ease-in-out 4s 1 normal forwards;
-  display: none;
+  animation: growArm 0.5s ease-in-out 3s 1 normal forwards;
 }
 @keyframes growArm {
-  50% {
+  60% {
     top: 8rem;
     left: -1rem;
     height: 5rem;
@@ -117,6 +117,219 @@ body {
     height: 10rem;
     width: 2rem;
   }
+}
+.introduction .intro-button .arm .arm-joint {
+  position: absolute;
+  margin: auto;
+  left: 0rem;
+  top: 0;
+  bottom: 0;
+  height: 7rem;
+  width: 0rem;
+  background: linear-gradient(rgb(83, 79, 79), rgb(29, 27, 27));
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  animation: growJoint 0.5s ease-in-out 3.5s 1 normal forwards;
+  z-index: 1;
+}
+@keyframes growJoint {
+  30% {
+    left: 0rem;
+    top: 0;
+    bottom: 0;
+    height: 5rem;
+    width: 0rem;
+  }
+  100% {
+    left: -4rem;
+    top: 0;
+    bottom: 0;
+    height: 5rem;
+    width: 4rem;
+  }
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 {
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  height: 0rem;
+  width: 3rem;
+  background: white;
+  border-radius: 5rem;
+  transform: rotate(30deg);
+  background: linear-gradient(to right, rgb(94, 90, 90), rgb(29, 27, 27));
+  transform-origin: top;
+  animation: idle1 1s ease-in-out infinite alternate, height1 0.3s ease-in-out 4s 1 normal forwards;
+}
+@keyframes height1 {
+  0% {
+    height: 0rem;
+  }
+  100% {
+    height: 18rem;
+  }
+}
+@keyframes idle1 {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(35deg);
+  }
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  height: 0rem;
+  width: 3rem;
+  background: white;
+  border-radius: 5rem;
+  transform: rotate(56deg);
+  transform-origin: bottom;
+  background: linear-gradient(to right, rgb(102, 98, 98), rgb(29, 27, 27));
+  animation: idle2 1s ease-in-out infinite alternate, height2 0.3s ease-in-out 4.3s 1 normal forwards;
+}
+@keyframes height2 {
+  0% {
+    height: 0rem;
+  }
+  100% {
+    height: 69rem;
+  }
+}
+@keyframes idle2 {
+  0% {
+    transform: rotate(56deg);
+  }
+  100% {
+    transform: rotate(53deg);
+  }
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: -50%;
+  height: 0rem;
+  width: 0rem;
+  background: white;
+  border-radius: 5rem;
+  transform-origin: bottom;
+  background: linear-gradient(to bottom, rgb(88, 85, 85), rgb(49, 45, 45));
+  animation: height3 0.5s ease-in-out 4.6s 1 normal forwards, idle3 1s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes idle3 {
+  0% {
+    transform: rotate(-85deg);
+  }
+  100% {
+    transform: rotate(-89deg);
+  }
+}
+@keyframes height3 {
+  0% {
+    height: 0rem;
+    width: 0rem;
+    border-radius: 5rem;
+  }
+  100% {
+    height: 20rem;
+    width: 40rem;
+    border-radius: 1rem;
+  }
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen {
+  height: 90%;
+  width: 90%;
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  overflow: hidden;
+  box-shadow: inset 0px 10px 25px rgba(0, 0, 0, 0.4), inset 0px -10px 25px rgba(250, 250, 250, 0.05);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Press Start 2P", cursive;
+  gap: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen::before {
+  content: " ";
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+  background-size: 100% 8px;
+  z-index: 2;
+  pointer-events: none;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .h1-name {
+  color: green;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .input-name {
+  width: 60%;
+  max-width: auto;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: green;
+  font-size: 2rem;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  border-bottom: 1px solid green;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-select {
+  font-size: 1rem;
+  color: green;
+  margin-top: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-WB {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-Wbutton {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 1rem;
+  outline: none;
+  background: linear-gradient(rgb(219, 219, 219), rgb(85, 85, 85));
+  cursor: pointer;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-Wbutton .fa-chess-queen {
+  font-size: 3.5rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-Wbutton:hover {
+  background: rgba(0, 128, 0, 0.4);
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-Wbutton:active {
+  background: rgba(0, 77, 0, 0.4);
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-Bbutton {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 1rem;
+  background: linear-gradient(rgb(219, 219, 219), rgb(85, 85, 85));
+  outline: none;
+  cursor: pointer;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-Bbutton .fa-chess-queen {
+  font-size: 3.5rem;
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-Bbutton:hover {
+  background: rgba(0, 128, 0, 0.4);
+}
+.introduction .intro-button .arm .arm-joint .shoulder1 .shoulder2 .shoulder3 .screen .p1-Bbutton:active {
+  background: rgba(0, 77, 0, 0.4);
 }
 .introduction .intro-button .container {
   position: absolute;
@@ -157,8 +370,12 @@ body {
   transform: translate(-30px, -30px) skew(0, -20deg);
   cursor: default;
 }
+.introduction .intro-button .container .cell .piece {
+  height: 90%;
+  width: auto;
+}
 .introduction .intro-button .container .cell:nth-child(1) {
-  animation: test 0.5s ease-in-out 1.83s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.82s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -174,7 +391,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(2) {
-  animation: test 0.5s ease-in-out 1.86s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.84s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -190,7 +407,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(3) {
-  animation: test 0.5s ease-in-out 1.89s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.86s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -206,7 +423,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(4) {
-  animation: test 0.5s ease-in-out 1.92s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.88s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -222,7 +439,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(5) {
-  animation: test 0.5s ease-in-out 1.95s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.9s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -238,7 +455,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(6) {
-  animation: test 0.5s ease-in-out 1.98s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.92s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -254,7 +471,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(7) {
-  animation: test 0.5s ease-in-out 2.01s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.94s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -270,7 +487,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(8) {
-  animation: test 0.5s ease-in-out 2.04s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.96s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -286,7 +503,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(9) {
-  animation: test 0.5s ease-in-out 2.07s 1 normal forwards;
+  animation: test 0.3s ease-in-out 1.98s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -302,7 +519,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(10) {
-  animation: test 0.5s ease-in-out 2.1s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -318,7 +535,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(11) {
-  animation: test 0.5s ease-in-out 2.13s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.02s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -334,7 +551,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(12) {
-  animation: test 0.5s ease-in-out 2.16s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.04s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -350,7 +567,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(13) {
-  animation: test 0.5s ease-in-out 2.19s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.06s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -366,7 +583,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(14) {
-  animation: test 0.5s ease-in-out 2.22s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.08s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -382,7 +599,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(15) {
-  animation: test 0.5s ease-in-out 2.25s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.1s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -398,7 +615,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(16) {
-  animation: test 0.5s ease-in-out 2.28s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.12s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -414,7 +631,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(17) {
-  animation: test 0.5s ease-in-out 2.31s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.14s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -430,7 +647,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(18) {
-  animation: test 0.5s ease-in-out 2.34s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.16s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -446,7 +663,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(19) {
-  animation: test 0.5s ease-in-out 2.37s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.18s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -462,7 +679,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(20) {
-  animation: test 0.5s ease-in-out 2.4s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.2s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -478,7 +695,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(21) {
-  animation: test 0.5s ease-in-out 2.43s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.22s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -494,7 +711,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(22) {
-  animation: test 0.5s ease-in-out 2.46s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.24s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -510,7 +727,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(23) {
-  animation: test 0.5s ease-in-out 2.49s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.26s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -526,7 +743,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(24) {
-  animation: test 0.5s ease-in-out 2.52s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.28s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -542,7 +759,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(25) {
-  animation: test 0.5s ease-in-out 2.55s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.3s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -558,7 +775,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(26) {
-  animation: test 0.5s ease-in-out 2.58s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.32s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -574,7 +791,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(27) {
-  animation: test 0.5s ease-in-out 2.61s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.34s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -590,7 +807,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(28) {
-  animation: test 0.5s ease-in-out 2.64s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.36s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -606,7 +823,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(29) {
-  animation: test 0.5s ease-in-out 2.67s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.38s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -622,7 +839,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(30) {
-  animation: test 0.5s ease-in-out 2.7s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.4s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -638,7 +855,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(31) {
-  animation: test 0.5s ease-in-out 2.73s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.42s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -654,7 +871,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(32) {
-  animation: test 0.5s ease-in-out 2.76s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.44s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -670,7 +887,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(33) {
-  animation: test 0.5s ease-in-out 2.79s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.46s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -686,7 +903,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(34) {
-  animation: test 0.5s ease-in-out 2.82s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.48s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -702,7 +919,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(35) {
-  animation: test 0.5s ease-in-out 2.85s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.5s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -718,7 +935,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(36) {
-  animation: test 0.5s ease-in-out 2.88s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.52s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -734,7 +951,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(37) {
-  animation: test 0.5s ease-in-out 2.91s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.54s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -750,7 +967,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(38) {
-  animation: test 0.5s ease-in-out 2.94s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.56s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -766,7 +983,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(39) {
-  animation: test 0.5s ease-in-out 2.97s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.58s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -782,7 +999,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(40) {
-  animation: test 0.5s ease-in-out 3s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.6s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -798,7 +1015,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(41) {
-  animation: test 0.5s ease-in-out 3.03s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.62s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -814,7 +1031,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(42) {
-  animation: test 0.5s ease-in-out 3.06s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.64s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -830,7 +1047,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(43) {
-  animation: test 0.5s ease-in-out 3.09s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.66s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -846,7 +1063,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(44) {
-  animation: test 0.5s ease-in-out 3.12s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.68s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -862,7 +1079,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(45) {
-  animation: test 0.5s ease-in-out 3.15s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.7s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -878,7 +1095,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(46) {
-  animation: test 0.5s ease-in-out 3.18s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.72s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -894,7 +1111,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(47) {
-  animation: test 0.5s ease-in-out 3.21s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.74s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -910,7 +1127,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(48) {
-  animation: test 0.5s ease-in-out 3.24s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.76s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -926,7 +1143,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(49) {
-  animation: test 0.5s ease-in-out 3.27s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.78s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -942,7 +1159,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(50) {
-  animation: test 0.5s ease-in-out 3.3s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.8s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -958,7 +1175,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(51) {
-  animation: test 0.5s ease-in-out 3.33s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.82s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -974,7 +1191,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(52) {
-  animation: test 0.5s ease-in-out 3.36s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.84s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -990,7 +1207,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(53) {
-  animation: test 0.5s ease-in-out 3.39s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.86s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1006,7 +1223,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(54) {
-  animation: test 0.5s ease-in-out 3.42s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.88s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1022,7 +1239,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(55) {
-  animation: test 0.5s ease-in-out 3.45s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.9s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1038,7 +1255,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(56) {
-  animation: test 0.5s ease-in-out 3.48s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.92s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1054,7 +1271,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(57) {
-  animation: test 0.5s ease-in-out 3.51s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.94s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1070,7 +1287,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(58) {
-  animation: test 0.5s ease-in-out 3.54s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.96s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1086,7 +1303,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(59) {
-  animation: test 0.5s ease-in-out 3.57s 1 normal forwards;
+  animation: test 0.3s ease-in-out 2.98s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1102,7 +1319,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(60) {
-  animation: test 0.5s ease-in-out 3.6s 1 normal forwards;
+  animation: test 0.3s ease-in-out 3s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1118,7 +1335,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(61) {
-  animation: test 0.5s ease-in-out 3.63s 1 normal forwards;
+  animation: test 0.3s ease-in-out 3.02s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1134,7 +1351,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(62) {
-  animation: test 0.5s ease-in-out 3.66s 1 normal forwards;
+  animation: test 0.3s ease-in-out 3.04s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1150,7 +1367,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(63) {
-  animation: test 0.5s ease-in-out 3.69s 1 normal forwards;
+  animation: test 0.3s ease-in-out 3.06s 1 normal forwards;
 }
 @keyframes test {
   0% {
@@ -1166,7 +1383,7 @@ body {
   }
 }
 .introduction .intro-button .container .cell:nth-child(64) {
-  animation: test 0.5s ease-in-out 3.72s 1 normal forwards;
+  animation: test 0.3s ease-in-out 3.08s 1 normal forwards;
 }
 @keyframes test {
   0% {
