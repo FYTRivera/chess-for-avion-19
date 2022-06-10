@@ -210,8 +210,7 @@
                             border-radius: 5rem;
                             transform-origin: bottom;
                             background: linear-gradient(to bottom,rgb(88, 85, 85),rgb(49, 45, 45));
-                            animation: height3 0.5s ease-in-out 4.6s 1 normal forwards,idle3 1s ease-in-out infinite alternate;
-                            
+                            animation: height3 0.3s ease-in-out 4.6s 1 normal forwards, idle3 1s ease-in-out infinite alternate;
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -239,7 +238,7 @@
                                 }
                             }
 
-                            .screen{
+                            .screen-1{
                                 height: 90%;
                                 width: 90%;
                                 border-radius: 1rem;
@@ -271,14 +270,15 @@
                                     z-index: 2;
                                     pointer-events: none;
                                 }
+                                
 
-                                .h1-name{
+                                .h1-name1{
                                     color: green;
                                     font-size: 1.2rem;
                                     margin-top: 3rem;
                                 }
 
-                                .input-name{
+                                .input-name1{
                                     width: 60%;
                                     max-width: auto;
                                     background: transparent;
@@ -345,6 +345,122 @@
                                     }
                                 }
                             }
+
+                            .screen-2{
+                                height: 90%;
+                                width: 90%;
+                                border-radius: 1rem;
+                                background-image: linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.3));
+                                overflow: hidden;
+                                box-shadow: inset 0px 10px 25px rgba(0, 0, 0, 0.4),
+                                            inset 0px -10px 25px rgba(250, 250, 250, 0.05);
+                                position: relative;
+                                display: none;
+                                align-items: center;
+                                flex-direction: column;
+                                font-family: 'Press Start 2P', cursive;
+                                gap: 1rem;
+
+                                &::before {
+                                    content: " ";
+                                    display: flex;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    bottom: 0;
+                                    right: 0;
+                                    background: linear-gradient(
+                                        to bottom,
+                                        rgba(18, 16, 16, 0) 50%,
+                                        rgba(0, 0, 0, 0.05) 50%
+                                    );
+                                    background-size: 100% 8px;
+                                    z-index: 2;
+                                    pointer-events: none;
+                                }
+
+                                .h1-name2{
+                                    color: green;
+                                    font-size: 1.2rem;
+                                    margin-top: 3rem;
+                                }
+
+                                .input-name2{
+                                    width: 60%;
+                                    max-width: auto;
+                                    background: transparent;
+                                    outline: none;
+                                    border: none;
+                                    color: green;
+                                    font-size: 2rem;
+                                    font-family: 'Press Start 2P', cursive;
+                                    text-align: center;
+                                    border-bottom: 1px solid green;
+                                }
+
+                                .p2-select{
+                                    font-size: 1rem;
+                                    color: green;
+                                    margin-top: 1rem;
+                                }
+
+                                .p2-WB{
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 1rem;
+                                }
+
+                                .p2-Wbutton{
+                                    height: 3rem;
+                                    width: 3rem;
+                                    border-radius: 0.5rem;
+                                    outline: none;
+                                    background: linear-gradient(rgb(219, 219, 219),rgb(85, 85, 85));
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .fa-chess-queen{
+                                        font-size: 2rem;
+                                        color: black;
+                                    }
+                                }
+
+                                .p2-Bbutton{
+                                    height: 3rem;
+                                    width: 3rem;
+                                    border-radius: 0.5rem;
+                                    background: linear-gradient(rgb(219, 219, 219),rgb(85, 85, 85));
+                                    outline: none;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .fa-chess-queen{
+                                        color: black;
+                                        font-size: 2rem;
+                                    }
+                                }
+
+                                .start-game{
+                                    padding: 0.7rem 4rem;
+                                    border-radius: 1rem;
+                                    background: linear-gradient(rgb(219, 219, 219),rgb(85, 85, 85));
+                                    cursor: pointer;
+                                    font-size: 1rem;
+                                    font-family: 'Press Start 2P', cursive;
+                                    outline: none;
+                                    border: none;
+
+                                    &:hover{
+                                        background: rgba(22, 170, 22, 0.4);
+                                    }
+
+                                    &:active{
+                                        background: rgba(0, 77, 0, 0.4);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -401,9 +517,9 @@
 
                 @for $i from 1 through 64 {
                     &:nth-child(#{$i}){
-                        animation: test 0.3s ease-in-out #{(0.02*$i)+1.8}s 1 normal forwards;
+                        animation: delayCell 0.3s ease-in-out #{(0.02*$i)+1.8}s 1 normal forwards;
 
-                        @keyframes test {
+                        @keyframes delayCell {
                             0%{ 
                                 opacity: 0;
                                 transform: translate(-30px,-30px) skew(0,-20deg);
@@ -541,3 +657,77 @@
     text-shadow: 0px 10px #e28965;
 }
 
+@keyframes height3reverse {
+    0%{
+        height: 0rem;
+        width: 0rem;
+        border-radius: 5rem;
+        transform: rotate(-85deg);
+        opacity: 0;
+    }
+
+    100%{ 
+        height: 20rem;
+        width: 40rem;
+        border-radius: 1rem;
+        transform: rotate(-89deg);
+    }
+}
+
+@keyframes height2reverse {
+    0%{
+        height: 0rem;
+        opacity: 0;
+    }
+
+    100%{
+        height: 69rem;
+    }
+}
+
+@keyframes height1reverse {
+    0%{
+        height: 0rem;
+        opacity: 0;
+    }
+
+    100%{
+        height: 18rem;
+    }
+}
+
+@keyframes growJointreverse{
+    30%{
+        left: 0rem;
+        top: 0;
+        bottom: 0;
+        height: 5rem;
+        width: 0rem;
+        opacity: 0;
+    }
+
+    100%{
+        left: -4rem;
+        top: 0;
+        bottom: 0;
+        height: 5rem;
+        width: 4rem;
+    }
+}
+
+@keyframes growArmreverse{
+    60%{
+        top: 8rem;
+        left: -1rem;
+        height: 5rem;   
+        width: 1rem; 
+        opacity: 0;
+    }
+
+    100%{
+        top: 5.5rem;
+        left: -2rem;
+        height: 10rem;
+        width: 2rem; 
+    }
+}
