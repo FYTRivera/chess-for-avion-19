@@ -1,124 +1,75 @@
 import { select, create } from './utils.js'
 
-const initialGame = {
-    '1': 'black_rook',
-    '2': 'black_knight',
-    '3': 'black_bishop',
-    '4': 'black_queen',
-    '5': 'black_king',
-    '6': 'black_bishop',
-    '7': 'black_knight',
-    '8': 'black_rook',
-    '9': 'black_pawn',
-    '10': 'black_pawn',
-    '11': 'black_pawn',
-    '12': 'black_pawn',
-    '13': 'black_pawn',
-    '14': 'black_pawn',
-    '15': 'black_pawn',
-    '16': 'black_pawn',
-    
-    '64': 'white_rook',
-    '63': 'white_knight',
-    '62': 'white_bishop',
-    '61': 'white_queen',
-    '60': 'white_king',
-    '59': 'white_bishop',
-    '58': 'white_knight',
-    '57': 'white_rook',
-    '56': 'white_pawn',
-    '55': 'white_pawn',
-    '54': 'white_pawn',
-    '53': 'white_pawn',
-    '52': 'white_pawn',
-    '51': 'white_pawn',
-    '50': 'white_pawn',
-    '49': 'white_pawn',
-}
-
-const piecesImages = {
-    'white_pawn': './media/pieces/white_pawn.png',
-    'white_rook': './media/pieces/white_rook.png',
-    'white_knight': './media/pieces/white_knight.png',
-    'white_bishop': './media/pieces/white_bishop.png',
-    'white_king': './media/pieces/white_king.png',
-    'white_queen': './media/pieces/white_queen.png',
-    'black_pawn': './media/pieces/black_pawn.png',
-    'black_rook': './media/pieces/black_rook.png',
-    'black_knight': './media/pieces/black_knight.png',
-    'black_bishop': './media/pieces/black_bishop.png',
-    'black_king': './media/pieces/black_king.png',
-    'black_queen': './media/pieces/black_queen.png',
-}
-
 class Chess {
     constructor(){
-        this.initialGame = {
-            '1': 'black_rook',
-            '2': 'black_knight',
-            '3': 'black_bishop',
-            '4': 'black_queen',
-            '5': 'black_king',
-            '6': 'black_bishop',
-            '7': 'black_knight',
-            '8': 'black_rook',
-            '9': 'black_pawn',
-            '10': 'black_pawn',
-            '11': 'black_pawn',
-            '12': 'black_pawn',
-            '13': 'black_pawn',
-            '14': 'black_pawn',
-            '15': 'black_pawn',
-            '16': 'black_pawn',
+    //     this.initialGame = {
+    //         '1': 'black_rook',
+    //         '2': 'black_knight',
+    //         '3': 'black_bishop',
+    //         '4': 'black_queen',
+    //         '5': 'black_king',
+    //         '6': 'black_bishop',
+    //         '7': 'black_knight',
+    //         '8': 'black_rook',
+    //         '9': 'black_pawn',
+    //         '10': 'black_pawn',
+    //         '11': 'black_pawn',
+    //         '12': 'black_pawn',
+    //         '13': 'black_pawn',
+    //         '14': 'black_pawn',
+    //         '15': 'black_pawn',
+    //         '16': 'black_pawn',
             
-            '64': 'white_rook',
-            '63': 'white_knight',
-            '62': 'white_bishop',
-            '61': 'white_queen',
-            '60': 'white_king',
-            '59': 'white_bishop',
-            '58': 'white_knight',
-            '57': 'white_rook',
-            '56': 'white_pawn',
-            '55': 'white_pawn',
-            '54': 'white_pawn',
-            '53': 'white_pawn',
-            '52': 'white_pawn',
-            '51': 'white_pawn',
-            '50': 'white_pawn',
-            '49': 'white_pawn',
-        }
+    //         '64': 'white_rook',
+    //         '63': 'white_knight',
+    //         '62': 'white_bishop',
+    //         '61': 'white_queen',
+    //         '60': 'white_king',
+    //         '59': 'white_bishop',
+    //         '58': 'white_knight',
+    //         '57': 'white_rook',
+    //         '56': 'white_pawn',
+    //         '55': 'white_pawn',
+    //         '54': 'white_pawn',
+    //         '53': 'white_pawn',
+    //         '52': 'white_pawn',
+    //         '51': 'white_pawn',
+    //         '50': 'white_pawn',
+    //         '49': 'white_pawn',
+    //     }
 
-        this.piecesImages = {
-            'white_pawn': './media/pieces/white_pawn.png',
-            'white_rook': './media/pieces/white_rook.png',
-            'white_knight': './media/pieces/white_knight.png',
-            'white_bishop': './media/pieces/white_bishop.png',
-            'white_king': './media/pieces/white_king.png',
-            'white_queen': './media/pieces/white_queen.png',
-            'black_pawn': './media/pieces/black_pawn.png',
-            'black_rook': './media/pieces/black_rook.png',
-            'black_knight': './media/pieces/black_knight.png',
-            'black_bishop': './media/pieces/black_bishop.png',
-            'black_king': './media/pieces/black_king.png',
-            'black_queen': './media/pieces/black_queen.png',
-        }
-    }
+    //     this.piecesImages = {
+    //         'white_pawn': './media/pieces/white_pawn.png',
+    //         'white_rook': './media/pieces/white_rook.png',
+    //         'white_knight': './media/pieces/white_knight.png',
+    //         'white_bishop': './media/pieces/white_bishop.png',
+    //         'white_king': './media/pieces/white_king.png',
+    //         'white_queen': './media/pieces/white_queen.png',
+    //         'black_pawn': './media/pieces/black_pawn.png',
+    //         'black_rook': './media/pieces/black_rook.png',
+    //         'black_knight': './media/pieces/black_knight.png',
+    //         'black_bishop': './media/pieces/black_bishop.png',
+    //         'black_king': './media/pieces/black_king.png',
+    //         'black_queen': './media/pieces/black_queen.png',
+    //     }
+    // }
 
-    placePiecesInPosition(initialGame){
-        for ( const piecePosition in initialGame ) {
-            console.log(piecePosition)
-            const pieceType = this.initialGame[ piecePosition ]
-            const pieceImageLocation = this.piecesImages[ pieceType ]
+    // placePiecesInPosition(initialGame){
+    //     for ( const piecePosition in initialGame ) {
+    //         // console.log(piecePosition)
+    //         const pieceType = this.initialGame[ piecePosition ]
+    //         const pieceImageLocation = this.piecesImages[ pieceType ]
     
-            const imgElement = create( 'img' )
-            imgElement.classList.add( 'piece' )
-            imgElement.setAttribute( 'piece-type', pieceType )
-            imgElement.src = `${ pieceImageLocation }`
-            console.log(pieceImageLocation)
+    //         const imgElement = create( 'img' )
+    //         imgElement.classList.add( 'piece' )
+    //         imgElement.setAttribute( 'piece-type', pieceType )
+    //         imgElement.src = `${ pieceImageLocation }`
+    //         // console.log(pieceImageLocation)
     
-            document.getElementById( `${ piecePosition }` ).append( imgElement )
-        }
+    //         document.getElementById( `${ piecePosition }` ).append( imgElement )
+
+    //         this.tesssss()
+    //     }
     }
 
     renderIntroduction(){
@@ -163,7 +114,7 @@ class Chess {
         APP.append(INTRO_DIV)
         INTRO_DIV.append(TITLE,INTRO_BUTTON)
 
-        placePiecesInPosition(initialGame);
+        // placePiecesInPosition(initialGame);
     }
 }
 
@@ -174,7 +125,7 @@ class Board {
             // boardData: []
         }
 
-        this.currentPlayer = ''
+        this.currentPlayer = '' //Current Player1 color
         this.player1Name = ''
         this.player2Name = ''
         this.player1Color = ''
@@ -189,20 +140,12 @@ class Board {
         for(let i = 0; i < boardCells; i++){
             var cell = create('div')
             cell.classList.add('cell')
-            cell.id = i+1
+            cell.id = i
+            
+            const cells = Array.from(cell)
 
             CONTAINER.append(cell)
         }
-
-        // const CELLS = Array.from(cell)
-
-        // CELLS.forEach((cell, index) => {
-        //     cell.addEventListener('click', () => {
-        //         if(cell.className.trim() == 'cell'){
-        //             console.log(index, 'hello')
-        //         }
-        //     })
-        // })
 
         setTimeout(() => {
             CONTAINER.style.display = 'flex'
@@ -215,8 +158,72 @@ class Board {
 
         this.renderArm(INTRO_BUTTON)
 
-        let test = new Chess()
-        test.placePiecesInPosition(test.initialGame)
+        // let test = new Chess()
+        // test.placePiecesInPosition(test.initialGame)
+
+        let boardState = [
+            ['','','','','','','',''],
+            ['','','','','','','',''],
+            ['','','','','','','',''],
+            ['','','','','','','',''],
+            ['','','','','','','',''],
+            ['','','','','','','',''],
+            ['w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn'],
+            ['','','','','','','','']
+        ]
+        
+        console.log(boardState)
+        
+        function renderPieces(){
+            for(let i=0; i < 9; i++){
+                for(let j=0; j < 9; j++){
+                    for (var key of Object.keys(piecesImages)) {
+                            // renderPieces(key)
+                        // console.log(piecesImages[key]);
+
+                        if(boardState[i][j] == piecesImages[key]){
+                            const img = create('img')
+                            img.src = `${piecesImages[key]}`
+        
+                            const selectall = select('.cell') 
+                            selectall.append(img)
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+
+        function clickCell(){
+            cells.forEach((cell, index) => {
+                cell.addEventListener('click', () => {
+                    if(cell.className.trim() == 'cell'){
+                        console.log(index)
+                    }
+                })
+            });
+        }
+        
+        clickCell()
+        
+        const piecesImages = {
+            'w_pawn': './media/pieces/white_pawn.png',
+            'w_rook': './media/pieces/white_rook.png',
+            'w_knight': './media/pieces/white_knight.png',
+            'w_bishop': './media/pieces/white_bishop.png',
+            'w_king': './media/pieces/white_king.png',
+            'w_queen': './media/pieces/white_queen.png',
+            'b_pawn': './media/pieces/black_pawn.png',
+            'b_rook': './media/pieces/black_rook.png',
+            'b_knight': './media/pieces/black_knight.png',
+            'b_bishop': './media/pieces/black_bishop.png',
+            'b_king': './media/pieces/black_king.png',
+            'b_queen': './media/pieces/black_queen.png',
+        }
+        
+        
+        renderPieces()
     }
 
     renderArm(INTRO_BUTTON){
@@ -324,44 +331,57 @@ class Board {
         p1WB.append(p1WhiteButton,p1BlackButton)
         p2WB.append(p2WhiteButton,p2BlackButton)
 
-    
         startGame.addEventListener('click', () => {
             if(inputP2Name.value === ''){
                 return inputP2Name.select()
             } else {
                 this.player2Name = inputP2Name.value
                 shoulder3.style = `animation: height3reverse 0.5s ease-in-out 0s 1 reverse backwards,idle3 1s ease-in-out infinite alternate;`
-                shoulder2.style = `animation: height2reverse 0.5s ease-in-out 0.5s 1 reverse backwards,idle2 1s ease-in-out infinite alternate`
-                shoulder1.style = `animation: height1reverse 0.5s ease-in-out 1s 1 reverse backwards,idle1 1s ease-in-out infinite alternate`
-                armJoint.style = `animation: growJointreverse 0.5s ease-in-out 1.5s 1 reverse backwards;`
-                arm.style = `animation: growArmreverse 0.5s ease-in-out 2s 1 reverse backwards;`
+                shoulder2.style = `animation: height2reverse 0.3s ease-in-out 0.5s 1 reverse backwards,idle2 1s ease-in-out infinite alternate`
+                shoulder1.style = `animation: height1reverse 0.3s ease-in-out 0.8s 1 reverse backwards,idle1 1s ease-in-out infinite alternate`
+                armJoint.style = `animation: growJointreverse 0.3s ease-in-out 1.1s 1 reverse backwards;`
+                arm.style = `animation: growArmreverse 0.5s ease-in-out 1.6s 1 reverse backwards;`
                 screen2.style = `animation: height3reverse 0.5s ease-in-out 0s 1 reverse backwards,idle3 1s ease-in-out infinite alternate;`
             }
         })
     }
 }
 
-
-
-function placePiecesInPosition(initialGame){
-    for ( const piecePosition in initialGame ) {
-        console.log(piecePosition)
-        const pieceType = initialGame[ piecePosition ]
-        const pieceImageLocation = piecesImages[ pieceType ]
-
-        const imgElement = document.createElement( 'img' )
-        imgElement.classList.add( 'piece' )
-        imgElement.setAttribute( 'piece-type', pieceType )
-        imgElement.src = `${ pieceImageLocation }`
-        console.log(pieceImageLocation)
-
-        document.getElementById( `${ piecePosition }` ).append( imgElement )
-    }
-}
-
-
-
 const game = new Chess()
 
 game.renderIntroduction()
 
+
+
+
+// for (const key of Object.keys(piecesImages)) {
+//     // renderPieces(key)
+//     console.log(key);
+// }
+
+// console.log()
+
+// renderPieces(piecesImages[])
+// for(let record in piecesImages){
+//     renderPieces(piecesImages[record])
+// }
+
+// renderPieces('w_pawn')
+// console.log(piecesImages(...args))
+
+
+// boardState.forEach((piecesImages,index) => {
+//     for(let i=0; i < 9; i++){
+//         for(let j=0; j < 9; j++){
+//             if(boardState[i][j] === piecesImages[property]){
+//                 const img = create('img')
+//                 img.src = `${property}`
+
+//                 document.getElementById([i][j]).append(img)
+//             }
+//         }
+//     }
+//     renderPieces(piecesImages,property)
+// })
+
+// renderPieces(piecesImages,'b_queen')
