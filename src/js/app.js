@@ -74,8 +74,8 @@ class Chess {
             '64': 'white_rook',
             '63': 'white_knight',
             '62': 'white_bishop',
-            '61': 'white_queen',
-            '60': 'white_king',
+            '61': 'white_king',
+            '60': 'white_queen',
             '59': 'white_bishop',
             '58': 'white_knight',
             '57': 'white_rook',
@@ -107,7 +107,7 @@ class Chess {
 
     placePiecesInPosition(initialGame){
         for ( const piecePosition in initialGame ) {
-            console.log(piecePosition)
+            // console.log(piecePosition)
             const pieceType = this.initialGame[ piecePosition ]
             const pieceImageLocation = this.piecesImages[ pieceType ]
     
@@ -115,7 +115,7 @@ class Chess {
             imgElement.classList.add( 'piece' )
             imgElement.setAttribute( 'piece-type', pieceType )
             imgElement.src = `${ pieceImageLocation }`
-            console.log(pieceImageLocation)
+            // console.log(pieceImageLocation)
     
             document.getElementById( `${ piecePosition }` ).append( imgElement )
         }
@@ -163,7 +163,7 @@ class Chess {
         APP.append(INTRO_DIV)
         INTRO_DIV.append(TITLE,INTRO_BUTTON)
 
-        placePiecesInPosition(initialGame);
+        // placePiecesInPosition(initialGame);
     }
 }
 
@@ -211,6 +211,7 @@ class Board {
 
         let test = new Chess()
         test.placePiecesInPosition(test.initialGame)
+        addCellListeners()
     }
 
     renderArm(INTRO_BUTTON){
@@ -276,25 +277,110 @@ class Board {
     }
 }
 
+// function placePiecesInPosition(initialGame){
+//     for ( const piecePosition in initialGame ) {
+//         // console.log(piecePosition)
+//         const pieceType = initialGame[ piecePosition ]
+//         const pieceImageLocation = piecesImages[ pieceType ]
+
+//         const imgElement = document.createElement( 'img' )
+//         imgElement.classList.add( 'piece' )
+//         imgElement.setAttribute( 'piece-type', pieceType )
+//         imgElement.src = `${ pieceImageLocation }`
+//         // console.log(pieceImageLocation)
+
+//         document.getElementById( `${ piecePosition }` ).append( imgElement )
+//     }
+// }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function placePiecesInPosition(initialGame){
-    for ( const piecePosition in initialGame ) {
-        console.log(piecePosition)
-        const pieceType = initialGame[ piecePosition ]
-        const pieceImageLocation = piecesImages[ pieceType ]
 
-        const imgElement = document.createElement( 'img' )
-        imgElement.classList.add( 'piece' )
-        imgElement.setAttribute( 'piece-type', pieceType )
-        imgElement.src = `${ pieceImageLocation }`
-        console.log(pieceImageLocation)
+function addCellListeners() {
+    
 
-        document.getElementById( `${ piecePosition }` ).append( imgElement )
-    }
+
+    document.querySelectorAll(`.cell`).forEach( pieceBoxElement => {
+        const pieceBoxPosition = pieceBoxElement.getAttribute( 'id' )
+        const pieceElement = pieceBoxElement.querySelector(`.piece`)
+        const pieceType = pieceElement?.getAttribute( 'piece-type' ) ?? null
+
+        const handleParams = {
+            pieceBoxElement,
+            pieceBoxPosition,
+            pieceElement,
+            pieceType
+        }
+
+        // console.log(handleParams)
+        // piecesEventListeners[ pieceBoxPosition ] = {
+        //     'mouseenter': _ => {
+        //         piecesHandle.handlePieceMouseenter( handleParams )
+        //     },
+        //     'mouseleave': _ => {
+        //         piecesHandle.handlePieceMouseleave( handleParams )
+        //     },
+        //     'click': _ => {
+        //         piecesHandle.handlePieceClick( handleParams )
+        //     },
+        // }
+
+        // pieceBoxElement.addEventListener( 'mouseenter', this.piecesEventListeners[ pieceBoxPosition ][ 'mouseenter' ])
+        // pieceBoxElement.addEventListener( 'mouseleave', this.piecesEventListeners[ pieceBoxPosition ][ 'mouseleave' ])
+        // pieceBoxElement.addEventListener( 'click', this.piecesEventListeners[ pieceBoxPosition ][ 'click' ])
+
+        //pieceBoxElement.addEventListener('click', handlePieceClick(handleParams))
+        pieceBoxElement.addEventListener("click", function (){
+            handlePieceClick(handleParams, pieceElement, pieceBoxElement);
+        });
+        pieceBoxElement.addEventListener("click", function (){
+            handleMove(handleParams, pieceElement, pieceBoxElement);
+        });
+    })
 }
 
+let pieceArray = []
 
+function handlePieceClick(handleParams, pieceElement, pieceBoxElement){
+    if(handleParams.pieceType!=null){
+        console.log(handleParams)
+        console.log(handleParams.pieceType)
+        
+        // pieceElement.remove();
+        const pieceBoxElementSelected = document.getElementById( `${handleParams.pieceBoxPosition }` )
+        const pieceElementSelected = pieceBoxElementSelected.querySelector(`.piece`)
+        // console.log( pieceElementSelected)
+        // console.log(pieceBoxElement)
+        if (pieceElementSelected!=undefined){
+            pieceArray.push(pieceElementSelected)
+        }
+        
+        
+
+        console.log(pieceArray)
+    }
+    else{
+       
+    }
+    
+}
+
+function handleMove(handleParams, pieceElement, pieceBoxElement){
+    if(handleParams.pieceType!=null){
+        
+    }
+    else{
+        if (pieceArray[0]!=undefined){
+            pieceBoxElement.append(pieceArray[0])
+        }
+        if (pieceArray[0]!=undefined){
+            pieceArray.pop()
+            
+        }  
+    } 
+    
+}
 
 const game = new Chess()
 
