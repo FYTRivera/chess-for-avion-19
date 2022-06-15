@@ -514,8 +514,9 @@
                     height: 90%;
                     width: auto;
                     opacity: 1;
-                    // animation: pieceOpacityDrop 1s ease-in-out 1s 1 normal forwards;
-
+                    filter: drop-shadow(0px 2px 3px black);
+                // animation: pieceOpacityDrop 1s ease-in-out 1s 1 normal forwards;
+                
                     @keyframes pieceOpacityDrop {
                         0%{
                             transform: translate(0,-30px);
@@ -662,15 +663,6 @@
     }
 }
 
-.opacity{
-    opacity: 0;
-}
-
-.fa-chess-bishop{
-    font-size: 10rem;
-    text-shadow: 0px 10px #e28965;
-}
-
 @keyframes height3reverse {
     0%{
         height: 0rem;
@@ -746,10 +738,10 @@
     }
 }
 
+.ready{
+    background: rgba(235, 214, 98, 0.4);
+}
 
-.background{
-    &:hover{
-        background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45));
-
-    }
+.placed{
+    background: rgba(253, 207, 4, 0.4);
 }
