@@ -4,6 +4,7 @@ class Chess {
     constructor(){
     }
 
+    //CREATE AND RENDER INTRODUCTION ANIMATIONS
     renderIntroduction(){
         const APP = select('.app')
         const INTRO_DIV = create('div')
@@ -57,8 +58,12 @@ class Board {
         this.player1Color = ''
         this.player2Color = ''
         this.historyBoard = []
-        this.holding = []
+        this.holdingArray = []
+        this.clickMove = false
+        this.clickDisplay = false
+        this.render = false
 
+        //2D CHESSBOARD ARRAY
         this.boardState = [
             ['b_rook','b_knight','b_bishop','b_queen','b_king','b_bishop','b_knight','b_rook'],
             ['b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn'],
@@ -70,6 +75,7 @@ class Board {
             ['w_rook','w_knight','w_bishop','w_queen','w_king','w_bishop','w_knight','w_rook']
         ]
 
+        //IMAGES PER PIECE
         this.piecesImages = {
             'w_pawn': './media/pieces/white_pawn.png',
             'w_rook': './media/pieces/white_rook.png',
@@ -86,6 +92,7 @@ class Board {
         }
     }
 
+    //CREATE CHESSBOARD
     createChessBoard(INTRO_BUTTON){
         const CONTAINER = create('div')
         CONTAINER.classList.add('container')
@@ -111,91 +118,133 @@ class Board {
         this.renderArm(INTRO_BUTTON)
     }
     
+    //RENDER CHESSBOARD PIECES BASED ON 2D CHESSBOARD ARRAY
     renderPieces(){
         const cell = selectAll('.cell')
         const cells = Array.from(cell)
-       
-        
-        cells.forEach((cell , index) => {
-            let col = index % 8
-            let row = (index - col) / 8
+        const obj = this.piecesImages
 
-            const currentCell = this.boardState[row][col]
-            const obj = this.piecesImages
+        if(this.render === true){
+            cell.forEach((cell,index) => {
+                const col = index % 8
+                const row = (index - col) / 8
+                const currentCell = this.boardState[row][col]
 
-            if(obj.hasOwnProperty(currentCell)){
-                const img = create('img')
-                img.src = obj[currentCell]
-                img.classList.add('piece')
-
-                cells[index].append(img)
-            }
-        })
-
-        this.clickCellMove()
+                if(obj.hasOwnProperty(currentCell) && !cell.hasChildNodes()){
+                    var img = create('img')
+                    img.src = obj[currentCell]
+                    img.classList.add('piece')
+                    img.id = 'images'
+                    img.setAttribute('draggable','true')
+                    cells[index].append(img)
+                }else if(currentCell === '' && cell.hasChildNodes()){
+                    cell[index].removeChild(cell.firstChild)
+                }
+                
+                this.clickMove = true
+                this.clickCellMove()
+            })
+        }
     }
 
     clickCellMove(){
-        const hold = this.holding
+        // this.render = false
+        let hold = this.holdingArray
+        // const cell = selectAll('.cell')
+        // const cells = Array.from(cell)
 
+        // cell.forEach((cell,index) => {
+        //     const col = index % 8
+        //     const row = (index - col) / 8
+        //     let currentPiece = this.boardState[row][col]
+
+        //     cell.addEventListener('click', () => {
+        //         if(this.clickMove === true && cell.hasChildNodes() &&  hold.length === 0){
+        //                 hold.push(currentPiece)
+        //                 // cell.firstChild.style.opacity = '0.2'
+        //                 // cell.firstChild.classList.add('clicked')
+        //                 // console.log(cells[index])
+        //                 // this.boardState[row][col] = ''
+        //                 // this.clickDisplay = true
+        //                 // this.clickDisplayMove()
+        //                  console.log('clciked')
+        //         }else if(cell.classList.contains('clicked')){
+        //                 cell.firstChild.classList.remove('clicked')
+        //         }
+        //     })
+        // })
+
+        const piece = selectAll('.piece')
         const cell = selectAll('.cell')
-        const cells = Array.from(cell)
-        
-        cells.forEach((celli, index) => {
+        const moveAudio = new Audio('./media/assets/audio/move.wav')
+            moveAudio.volume = 0.005
+            moveAudio.playbackRate = 5
+
+        piece.forEach((piece,index) => {
+            piece.addEventListener('dragstart', () => {
+                hold.push(piece)
+                console.log(hold)
+                piece.classList.add('dragging')
+                piece.style.opacity = '0'
+                piece.parentNode.classList.add('ready')
+            })
+
+            piece.addEventListener('dragend', () => {
+                    moveAudio.load()
+                    moveAudio.play()
+                piece.classList.remove('dragging')
+                piece.style.opacity = '1'
+                piece.classList.add('placed')
+            })
+        })
+
+        cell.forEach(cell => {
+            cell.addEventListener('dragover', (e) => {
+                e.preventDefault()
+                if(cell.hasChildNodes() === false){
+                    // const colored = select('ready')
+                    const draggable = select('.dragging')
+                    cell.appendChild(draggable)
+                    this.clickMove = false
+                }
+            })
+        })
+    }
+
+    clickDisplayMove(){
+        this.clickMove = false
+        if(this.clickDisplay === true){
+            const cell = selectAll('.cell')
+            const cells = Array.from(cell)
+            let hold = this.holdingArray
+
+            cell.forEach((cell, index) => {
                 let col = index % 8
                 let row = (index - col) / 8
 
-            const currentCell = this.boardState[row][col]
-
-            celli.addEventListener('click', () => {
-                if(celli.hasChildNodes()){
-                    hold.push(currentCell)
-                    celli.style= 'background: radial-gradient(rgba(16, 214, 9, 0.4),rgba(222, 238, 6, 0.4));'
-                    this.boardState[row][col] = ''
-                    console.log(hold)
-                    console.log(currentCell)
-                    this.clickDisplayMove(celli)
-                } else {
-                    return
-                }
+                cell.addEventListener('click', () => {
+                    if(!cell.hasChildNodes() && hold.length !== 0){
+                        let replace = hold.pop()
+                        this.boardState[row][col] = replace
+                        this.renderPieces()
+                        return 
+                    }
+                })
             })
-        })
+        }
     }
 
-    clickDisplayMove(celli){
-        const cell = selectAll('.cell')
-        const cells = Array.from(cell)
+    // hoverMoves(){
+    //     const cell = select('.cell')
+    //     const obj = this.piecesImages
 
-        const hold = this.holding
+    //     cell.forEach((cell,index) => {
+    //         if(obj.)
+    //     })
+    // }
 
-        cells.forEach((cell, index) => {
-            let col = index % 8
-            let row = (index - col) / 8
-
-            const currentCell = this.boardState[row][col]
-            const obj = this.piecesImages
-
-            cell.addEventListener('click', () => {
-                if(cell.hasChildNodes()){
-                    return
-                }else{
-                    const replace = hold.pop()
-                    const img = create('img')
-                    img.src = obj[replace]
-                    img.classList.add('piece')
-                    celli.removeChild(celli.firstChild)
-                    celli.style = `background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.1));`
-                    cell.classList.add('background')
-                    cells[index].append(img)
-                    console.log(replace)
-                    console.log(hold)
-                    console.log(this.boardState)
-                    console.log(currentCell)
-                }
-            })
-        })
-    }
-
+    //CREATE AND RENDER THE INTRODUCTION ROBOT ARM ANIMATIONS
+    
     renderArm(INTRO_BUTTON){
         const arm = create('div')
         const armJoint = create('div')
@@ -309,6 +358,7 @@ class Board {
                 arm.style = `animation: growArmreverse 0.5s ease-in-out 1.6s 1 reverse backwards;`
                 screen2.style = `animation: height3reverse 0.5s ease-in-out 0s 1 reverse backwards,idle3 1s ease-in-out infinite alternate;`
 
+                this.render = true
                 this.renderPieces()
             }
         })
@@ -318,3 +368,4 @@ class Board {
 const game = new Chess()
 
 game.renderIntroduction()
+
