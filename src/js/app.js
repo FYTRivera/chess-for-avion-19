@@ -1,5 +1,8 @@
 import { select, create, selectAll } from './utils.js'
 
+
+let currentClass = 'whiteTurn'
+
 class Chess {
     constructor(){
     }
@@ -134,6 +137,7 @@ class Board {
                     var img = create('img')
                     img.src = obj[currentCell]
                     img.classList.add('piece')
+                    img.classList.add(currentCell)
                     img.id = 'images'
                     img.setAttribute('draggable','true')
                     cells[index].append(img)
@@ -145,8 +149,9 @@ class Board {
                 this.clickCellMove()
             })
         }
-    }
 
+    }
+    
     clickCellMove(){
         // this.render = false
         let hold = this.holdingArray
@@ -187,6 +192,7 @@ class Board {
                 piece.classList.add('dragging')
                 piece.style.opacity = '0'
                 piece.parentNode.classList.add('ready')
+                piece.classList.remove('placed')
             })
 
             piece.addEventListener('dragend', () => {
@@ -195,7 +201,19 @@ class Board {
                 piece.classList.remove('dragging')
                 piece.style.opacity = '1'
                 piece.classList.add('placed')
+
+                if(currentClass === 'whiteTurn'){
+                    currentClass = 'blackTurn'
+                }
+                else{
+                    currentClass = 'whiteTurn'
+                }
+                swapTurns(currentClass)
+                    
+                
             })
+
+            
         })
 
         cell.forEach(cell => {
@@ -209,6 +227,7 @@ class Board {
                 }
             })
         })
+        
     }
 
     clickDisplayMove(){
@@ -369,3 +388,15 @@ const game = new Chess()
 
 game.renderIntroduction()
 
+swapTurns(currentClass)
+
+function swapTurns(currentClass){
+    
+    if (currentClass === 'whiteTurn'){
+        console.log(`white's turn`)
+    }
+
+    else{
+        console.log(`black's turn`)
+    }
+}
