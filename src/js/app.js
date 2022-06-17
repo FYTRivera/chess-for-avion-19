@@ -1,5 +1,7 @@
 import { select, create, selectAll } from './utils.js'
 
+let currentTurn = 'whiteTurn'
+
 class Chess {
     constructor(){
         this.historyBoard = []
@@ -138,6 +140,14 @@ class Chess {
                 piece.classList.remove('dragging','add-animation-piece')
                 piece.style.opacity = '1'
                 piece.classList.add('placed')
+
+                if(currentTurn === 'whiteTurn'){
+                    currentTurn = 'blackTurn'
+                }
+                else{
+                    currentTurn = 'whiteTurn'
+                }
+                swapTurns(currentTurn)
             })
 
             cell.addEventListener('dragover', e => {
@@ -403,3 +413,16 @@ class Player {
 const start = new Chess()
 
 start.gameStart()
+
+swapTurns(currentTurn)
+
+function swapTurns(currentTurn){
+    
+    if (currentTurn === 'whiteTurn'){
+        console.log(`white's turn`)
+    }
+
+    else{
+        console.log(`black's turn`)
+    }
+}
