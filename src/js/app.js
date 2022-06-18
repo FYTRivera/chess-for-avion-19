@@ -1,31 +1,30 @@
 import { select, create, selectAll } from './utils.js'
 
+let currentPlayer = ''
+let player1Name = ''
+let player2Name = ''
+let player1Color = ''
+let player2Color = ''
+
+//2D CHESSBOARD ARRAY
+let boardState = [
+    ['b_rook','b_knight','b_bishop','b_queen','b_king','b_bishop','b_knight','b_rook'],
+    ['b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn'],
+    ['','','','','','','',''],
+    ['','','','','','','',''],
+    ['','','','','','','',''],
+    ['','','','','','','',''],
+    ['w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn'],
+    ['w_rook','w_knight','w_bishop','w_queen','w_king','w_bishop','w_knight','w_rook']
+]
+
 let currentTurn = 'whiteTurn'
+
 
 class Chess {
     constructor(){
         this.historyBoard = []
         this.holdingArray = []
-        this.clickMove = false
-        this.clickDisplay = false
-        this.render = false
-        this.currentPlayer = ''
-        this.player1Name = ''
-        this.player2Name = ''
-        this.player1Color = ''
-        this.player2Color = ''
-
-        //2D CHESSBOARD ARRAY
-        this.boardState = [
-            ['b_rook','b_knight','b_bishop','b_queen','b_king','b_bishop','b_knight','b_rook'],
-            ['b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn','b_pawn'],
-            ['','','','','','','',''],
-            ['','','','','','','',''],
-            ['','','','','','','',''],
-            ['','','','','','','',''],
-            ['w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn','w_pawn'],
-            ['w_rook','w_knight','w_bishop','w_queen','w_king','w_bishop','w_knight','w_rook']
-        ]
 
         //IMAGES PER PIECE
         this.piecesImages = {
@@ -50,91 +49,44 @@ class Chess {
         game.renderIntroduction()
     }
 
+    whosCurrentPlayer(){
+        if(player1Color === 'white'){
+            currentPlayer = player1Color
+        } else {
+            currentPlayer = player2Color
+        }
+
+        this.clickCellMove()
+    }
+
     clickCellMove(){
-        let board = new Board()
-        let hold = this.holdingArray
-        // const cell = selectAll('.cell')
-        // const cells = Array.from(cell)
-
-        // cell.forEach((cell,index) => {
-        //     const col = index % 8
-        //     const row = (index - col) / 8
-        //     let currentPiece = this.boardState[row][col]
-
-        //     cell.addEventListener('click', () => {
-        //         if(cell.hasChildNodes() &&  hold.length === 0){
-        //                 hold.push(currentPiece)
-        //                 cell.firstChild.style.opacity = '0.2'
-        //                 // cell.removeChild(cell.firstChild)
-        //                 this.boardState[row][col] = ''
-        //         }else if(!cell.hasChildNodes()){
-        //             console.log('not ok')
-        //         }
-
-        //         this.clickDisplayMove()
-        //         return
-        //     })
-        // })
-    // }
-        // const piece = selectAll('.piece')
         const cell = selectAll('.cell')
+        let hold = this.holdingArray
+
         const moveAudio = new Audio('./media/assets/audio/move.wav')
             moveAudio.volume = 0.005
             moveAudio.playbackRate = 5
-
-        // piece.forEach((piece,index) => {
-        //     piece.classList.remove('add-animation-piece')
-
-        //     piece.addEventListener('dragstart', () => {
-        //         // hold.push(piece)
-        //         console.log(index)
-        //         piece.classList.add('dragging')
-        //         piece.style.opacity = '0'
-        //         piece.parentNode.classList.add('ready')
-        //     })
-
-        //     piece.addEventListener('dragend', () => {
-        //         moveAudio.load()
-        //         moveAudio.play()
-        //         piece.classList.remove('dragging')
-        //         piece.style.opacity = '1'
-        //         piece.classList.add('placed')
-        //     })
-        // })
-    
-        // cell.forEach(cell => {
-        //     cell.addEventListener('dragover', e => {
-        //         e.preventDefault()
-        //         if(cell.hasChildNodes() === false){
-        //             // const colored = select('ready')
-        //             const draggable = select('.dragging')
-        //             cell.appendChild(draggable)
-        //             // this.clickDisplayMove()
-        //         }
-        //     })
-        // })
-
+        
         cell.forEach((cell,index) => {
             const col = index % 8
             const row = (index - col) / 8
-            const currentPiece = this.boardState[row][col]
-            
+            const currentPiece = boardState[row][col]
+
             cell.addEventListener('dragstart', () => {
                 let piece = cell.firstChild
                 piece.style = `opacity: 0;`
                 hold.push(currentPiece)
-                
+
                 piece.classList.add('dragging')
                 cell.classList.add('ready')
-                this.boardState[row][col] = ''
+                boardState[row][col] = ''
             })
 
             cell.addEventListener('dragend', () => {
                 let piece = cell.firstChild
                 let replace = hold.pop()
 
-                this.boardState[row][col] = replace
-                console.log(this.boardState)
+                boardState[row][col] = replace
                 moveAudio.load()
                 moveAudio.play()
                 piece.classList.remove('dragging','add-animation-piece')
@@ -155,32 +107,34 @@ class Chess {
                 if(cell.hasChildNodes() === false){
                     const draggable = select('.dragging')
                     cell.appendChild(draggable)
-                    // board.renderPieces()
+
+                    this.swapTurns()
                 }
             })
         })
     }
 
-    // clickDisplayMove(){
-    //     const cell = selectAll('.cell')
-    //     const cells = Array.from(cell)
-    //     let hold = this.holdingArray
-    //     const board = new Board()
+    swapTurns(){
+        const cell = selectAll('.cell')
 
-    //     cell.forEach((cell, index) => {
-    //         let col = index % 8
-    //         let row = (index - col) / 8
+        if(currentPlayer === 'white'){
+            currentPlayer = 'black'
+        }else{
+            currentPlayer = 'white'
+        }
 
-    //         cell.addEventListener('click', () => {
-    //             if(!cell.hasChildNodes() && hold.length !== 0){
-    //                 let replace = hold.pop()
-    //                 this.boardState[row][col] = replace
-    //                 // board.renderPieces()
-    //                 console.log('ye', hold, this.boardState)
-    //             }
-    //         })
-    //     })
-    // }
+        cell.forEach((cell,index) => {
+            const col = index % 8
+            const row = (index - col) / 8
+            const currentPiece = boardState[row][col]
+
+            if(currentPlayer === 'white' && currentPiece.includes('b_')){
+                cell.style = 'pointer-events: none'
+            }else if(currentPlayer === 'black' && currentPiece.includes('w_')){
+                cell.style = 'pointer-events: none'
+            }
+        })
+    }
 }
 
 class Board {
@@ -330,9 +284,9 @@ class Board {
             } else {
                 screen1.style.display = 'none'
                 screen2.style.display = 'flex'
-                chess.player1Name = inputP1Name.value
-                chess.currentPlayer = 'white'
-                chess.player1Color = 'white'
+                player1Name = inputP1Name.value
+                player1Color = 'white'
+                player2Color = 'black'
                 p2WhiteButton.style.display = 'none'
             }
         })
@@ -343,9 +297,9 @@ class Board {
             } else {
                 screen1.style.display = 'none'
                 screen2.style.display = 'flex'
-                chess.player1Name = inputP1Name.value
-                chess.currentPlayer = 'black'
-                chess.player1Color = 'black'
+                player1Name = inputP1Name.value
+                player1Color = 'black'
+                player2Color = 'white'
                 p2BlackButton.style.display = 'none'
             }
         })
@@ -365,7 +319,7 @@ class Board {
             if(inputP2Name.value === ''){
                 return inputP2Name.select()
             } else {
-                chess.player2Name = inputP2Name.value
+                player2Name = inputP2Name.value
                 shoulder3.style = `animation: height3reverse 0.3s ease-in-out 0s 1 reverse backwards,idle3 1s ease-in-out infinite alternate;`
                 shoulder2.style = `animation: height2reverse 0.3s ease-in-out 0.3s 1 reverse backwards,idle2 1s ease-in-out infinite alternate`
                 shoulder1.style = `animation: height1reverse 0.3s ease-in-out 0.6s 1 reverse backwards,idle1 1s ease-in-out infinite alternate`
@@ -390,7 +344,7 @@ class Board {
         cell.forEach((cell,index) => {
             const col = index % 8
             const row = (index - col) / 8
-            const currentCell = chess.boardState[row][col]
+            const currentCell = boardState[row][col]
 
             if(obj.hasOwnProperty(currentCell) && !cell.hasChildNodes()){
                 let img = create('img')
@@ -403,12 +357,14 @@ class Board {
                 cell[index].removeChild(cell.firstChild)
             }
         })
+
+        chess.whosCurrentPlayer()
     }
 }
 
-class Player {
+// class Player {
 
-}
+// }
 
 const start = new Chess()
 
