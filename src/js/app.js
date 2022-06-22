@@ -89,6 +89,9 @@ class Chess {
                 piece.classList.remove('dragging','add-animation-piece')
                 piece.style.opacity = '1'
                 piece.classList.add('placed')
+
+                console.log('Chessboard 2D',boardState)
+                this.changeplayer()
             })
 
             cell.addEventListener('dragover', e => {
@@ -97,20 +100,20 @@ class Chess {
                     const draggable = select('.dragging')
                     cell.appendChild(draggable)
 
-                    this.swapTurns()
+                    this.disableDrag()
                 }
-            })
+            })  
         })
     }
 
-    swapTurns(){
-        const cell = selectAll('.cell')
+    changeplayer(){
+        currentPlayer = currentPlayer == 'white' ? 'black' : 'white'
+        console.log(currentPlayer)
+    }
 
-        if(currentPlayer === 'white'){
-            currentPlayer = 'black'
-        }else{
-            currentPlayer = 'white'
-        }
+    disableDrag(){
+        const cell = selectAll('.cell')
+        const board = new Board()
 
         cell.forEach((cell,index) => {
             const col = index % 8
@@ -118,10 +121,12 @@ class Chess {
             const currentPiece = boardState[row][col]
 
             if(currentPlayer === 'white' && currentPiece.includes('b_')){
-                cell.style = 'pointer-events: none'
+                // cell.style = 'pointer-events: none'
             }else if(currentPlayer === 'black' && currentPiece.includes('w_')){
-                cell.style = 'pointer-events: none'
+                // cell.style = 'pointer-events: none'
             }
+
+            // board.renderPieces()
         })
     }
 }
@@ -318,6 +323,10 @@ class Board {
 
                 this.renderPieces()
                 chess.clickCellMove()
+
+                console.log(`Player 1 Name: ${player1Name} Color: ${player1Color}`)
+                console.log(`Player 2 Name: ${player2Name} Color: ${player2Color}`)
+                console.table(boardState)
             }
         })
     }
@@ -346,8 +355,6 @@ class Board {
                 cell[index].removeChild(cell.firstChild)
             }
         })
-
-        chess.whosCurrentPlayer()
     }
 }
 
